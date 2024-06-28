@@ -5,6 +5,7 @@ export const videos = ref([
     id: 1,
     src: '/vertical.mp4',
     name: 'titdle',
+    description: 'selam millet',
     info: {
       score: 4,
       name: 'Kaan Koroglu',
