@@ -5,6 +5,12 @@ export default {
   router: {
     base: '/testimonials/'
   },
+  build: {
+    extractCSS: true,
+  },
+  generate: {
+    fallback: true,
+  },
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ['media-player', 'media-provider', 'media-audio-layout'].includes(tag),
