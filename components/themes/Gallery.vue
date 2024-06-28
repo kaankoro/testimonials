@@ -9,7 +9,7 @@
     v-if="videoCount < videos.length"
     @click="loadMore"
   >
-    Load Mosre
+    Load More
   </button>
 </template>
 
