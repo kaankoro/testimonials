@@ -1,5 +1,5 @@
 <template>
-  <div class="columns-3">
+  <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
     <div v-for="video in displayedVideos" :key="video.id">
       <VideoPlayer :key="video.id" :video="video" class="w-full break-inside-avoid"/>
     </div>

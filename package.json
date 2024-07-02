@@ -15,6 +15,7 @@
     "@iframe-resizer/parent": "^5.1.4",
     "@iframe-resizer/vue": "^5.1.4",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@yeger/vue-masonry-wall": "^5.0.12",
     "gh-pages": "^6.1.1",
     "iframe-resizer": "^4.4.2",
     "nuxt": "^3.12.2",
