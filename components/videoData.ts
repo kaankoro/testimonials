@@ -7,6 +7,7 @@ export const videos = ref([
     name: 'titdle',
     description: 'selam millet',
     thumbnailUrl: '/thumbnail.jpg',
+    uploadDate: '2024-03-31T08:00:00+08:00',
     info: {
       score: 4,
       name: 'Kaan Koroglu',
@@ -38,6 +39,10 @@ export const videos = ref([
   {
     id: 2,
     src: '/arda_guler.mp4',
+    name: 'titdle',
+    description: 'selam millet',
+    thumbnailUrl: '/thumbnail.jpg',
+    uploadDate: '2024-03-31T08:00:00+08:00',
     info: {
       score: 4,
       name: 'Kaan Koroglu',
@@ -70,6 +75,10 @@ export const videos = ref([
   {
     id: 3,
     referrer:"facebook",
+    name: 'titdle',
+    description: 'selam millet',
+    thumbnailUrl: '/thumbnail.jpg',
+    uploadDate: '2024-03-31T08:00:00+08:00',
     info: {
       score: 5,
       name: 'Kaan Köroğlu',
