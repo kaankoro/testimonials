@@ -1,7 +1,7 @@
 <template>
-  <div class="masonry columns-3 gap-4">
-    <div v-for="video in displayedVideos" :key="video.id" class="masonry-item">
-      <VideoPlayer :key="video.id" :video="video" />
+  <div class="columns-3">
+    <div v-for="video in displayedVideos" :key="video.id">
+      <VideoPlayer :key="video.id" :video="video" class="w-full break-inside-avoid"/>
     </div>
   </div>
   <button

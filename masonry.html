@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <title>Document</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+      .row {
+        display: flex;
+        width:100%;
+        max-width: 1440px;
+      }
+     .column {
+       display: flex;
+       flex-direction: column;
+       margin: 0.25rem;
+      }
+      .item {
+        margin-bottom: 0.25rem;
+        outline: none;
+      }
+      .item > img {
+        width: 100%;
+        border-radius: 12px;
+      }
+</style>
+</head>
+<body>
+<div class="row"></div>
+<script>
+fetch('https://images-api.nasa.gov/search?q=mars rover').then(async (data) => {
+  let d = await data.json();
+  let images = d.collection.items;
+  const row = document.querySelector('.row');
+  // Number of columns
+  const cols = 4;
+  // Map to store all the columns
+  const colsCollection = {};
+  // Create number of columns
+  for(let i=1; i <= cols; i++) {
+    colsCollection[`col${i}`] = document.createElement('div');
+    colsCollection[`col${i}`].classList.add('column');
+  }
+  // Add images to each column
+  for(var i=0; i < cols; i++) {
+    if (!images.length || !images[i]) break;
+    const itemContainer = document.createElement('div');
+    itemContainer.classList.add('item');
+    const item = document.createElement('img');
+    item.src = images[i].links[0].href;
+    itemContainer.appendChild(item);
+    colsCollection[`col${i + 1}`].appendChild(itemContainer);
+
+    if(i === cols - 1) {
+      images.splice(0, cols);
+      // reset i
+      i = -1;
+    }
+  }
+  Object.values(colsCollection).forEach(column => {
+    row.appendChild(column);
+  })
+})
+</script>
+</body>
+</html>

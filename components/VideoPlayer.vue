@@ -19,7 +19,7 @@
         :style="{ aspectRatio: playerAspectRatio }"
       >
       <media-provider style="max-height: 400px;">
-        <Img v-if="!bClicked && !bHover" class="h-full w-full absolute" :src="props.video.thumbnailUrl"/>
+        <img v-if="!bClicked && !bHover && props.video.thumbnailUrl" class="h-full w-full absolute" :src="props.video.thumbnailUrl"><img/>
           <div class="layer"></div>
           <VideoButton :isPlaying="isPlaying"/>
           <VideoInfo :info="props.video.info" />
@@ -56,7 +56,10 @@ import 'vidstack/player/styles/default/layouts/video.css';
 import 'vidstack/player';
 import 'vidstack/player/layouts';
 import { onMounted, ref, nextTick } from 'vue';
-import { MediaPlayerElement } from 'vidstack/elements';
+import { defineCustomElement, MediaPlayerElement } from 'vidstack/elements';
+
+defineCustomElement(MediaPlayerElement);
+
 
 const props = defineProps({
   video: Object,
