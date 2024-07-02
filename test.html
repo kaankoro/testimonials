@@ -1,5 +1,10 @@
-<iframe id="myIframe" src="http://localhost:3000/" title="description"></iframe>
+<iframe id="myIframe" src="https://profound-florentine-1fdd7c.netlify.app/" title="description"></iframe>
 <script src="/node_modules/@iframe-resizer/parent/index.umd.js"></script>
+<script
+  src="/node_modules/@iframe-resizer/child/index.umd.js"
+  type="text/javascript"
+  async
+></script>
 <style>
 iframe {
     width: 100%;
@@ -7,5 +12,5 @@ iframe {
   }
 </style>
 <script>
-    iframeResize({ license: "xxxx" });
+    iframeResize({ license: 'GPLv3' }, { log: true }, '#myIframe');
   </script>

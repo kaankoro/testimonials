@@ -141,20 +141,24 @@
       display: flex;
   }
 
+  .masonry {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
   .masonry-item {
-    flex: 1 1 calc(33.333% - 1rem);
+    width: calc(33.333% - 1rem);
     margin-bottom: 1rem;
-    overflow: hidden;
   }
   
   @media (max-width: 1024px) {
     .masonry-item {
-      flex: 1 1 calc(50% - 1rem);
+      width: calc(50% - 1rem);
     }
   }
   
   @media (max-width: 768px) {
     .masonry-item {
-      flex: 1 1 100%;
+      width: 100%;
     }
   }

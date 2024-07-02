@@ -30,27 +30,3 @@ const loadMore = () => {
   videoCount.value += 3; // Load 3 more videos
 };
 </script>
-
-<style scoped>
-.masonry {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.masonry-item {
-  width: calc(33.333% - 1rem);
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 1024px) {
-  .masonry-item {
-    width: calc(50% - 1rem);
-  }
-}
-
-@media (max-width: 768px) {
-  .masonry-item {
-    width: 100%;
-  }
-}
-</style>

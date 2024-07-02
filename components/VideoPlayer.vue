@@ -5,7 +5,7 @@
         v-if="isMounted"
         class="player"
         :title="props.video.name"
-        muted="muted"
+        muted
         :src="$src"
         crossOrigin
         playsInline
@@ -18,7 +18,8 @@
         :duration="props.video.duration"
         :style="{ aspectRatio: playerAspectRatio }"
       >
-        <media-provider style="max-height: 400px;">
+      <media-provider style="max-height: 400px;">
+        <Img v-if="!bClicked && !bHover" class="h-full w-full absolute" :src="props.video.thumbnailUrl"/>
           <div class="layer"></div>
           <VideoButton :isPlaying="isPlaying"/>
           <VideoInfo :info="props.video.info" />
@@ -54,7 +55,6 @@ import 'vidstack/player/styles/default/layouts/audio.css';
 import 'vidstack/player/styles/default/layouts/video.css';
 import 'vidstack/player';
 import 'vidstack/player/layouts';
-import 'vidstack/player/ui';
 import { onMounted, ref, nextTick } from 'vue';
 import { MediaPlayerElement } from 'vidstack/elements';
 
@@ -71,6 +71,7 @@ let showGrayScreen = ref(true);
 let overlayOpacity = ref(1);
 let overlayZIndex = ref(1);
 let bClicked = ref(false);
+let bHover = ref(false);
 let isPlaying = ref(false);
 let rCurrentTime = ref(0);
 let isMounted = ref(false);
@@ -133,11 +134,6 @@ onMounted(async () => {
   await nextTick(); // Ensure DOM is updated before accessing $player
 
   if ($player.value && props.video.tracks) {
-    for (const track of props.video.tracks) {
-      $player.value.textTracks.add(track);
-    }
-
-    $player.value.subscribe(({ paused, viewType }) => {});
 
     // Generate transcript with unique IDs for each cue
     for (let i = 0; i < props.video.tracks[0].content.cues.length; ++i) {
@@ -159,6 +155,7 @@ onMounted(async () => {
 // Loop preview
 function handleMouseEnter() {
   if (bClicked.value) return;
+  bHover.value = true;
   const player = $player.value;
   let interval;
   if (player.currentTime <= 0.1 && isReadyToPlay.value) { // Check if media is ready to play
@@ -174,6 +171,7 @@ function handleMouseEnter() {
         player.currentTime = 0;
         player.pause();
       }
+      bHover.value = false;
     });
     player.addEventListener('click', () => {
       clearInterval(interval);
