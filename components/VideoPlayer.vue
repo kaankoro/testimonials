@@ -1,9 +1,9 @@
 <template>
   <div itemscope itemtype="https://schema.org/VideoObject" class="video-container">
-    <meta itemprop="name" :content="props.video.name">
-    <meta itemprop="duration" :content="props.video.duration">
-    <meta itemprop="thumbnail" :content="props.video.thumbnailUrl">
-    <meta itemprop="description" :content="props.video.description">
+    <meta v-if="props.video.name" itemprop="name" :content="props.video.name">
+    <meta v-if="props.video.duration" itemprop="duration" :content="props.video.duration">
+    <meta v-if="props.video.thumbnailUrl" itemprop="thumbnail" :content="props.video.thumbnailUrl">
+    <meta v-if="props.video.description" itemprop="description" :content="props.video.description">
     <template v-if="props.video.src">
       <media-player
         v-if="isMounted"
