@@ -4,6 +4,7 @@
     <meta v-if="props.video.duration" itemprop="duration" :content="props.video.duration">
     <meta v-if="props.video.thumbnailUrl" itemprop="thumbnailUrl" :content="props.video.thumbnailUrl">
     <meta v-if="props.video.description" itemprop="description" :content="props.video.description">
+    <meta v-if="props.video.uploadDate" itemprop="uploadDate" :content="props.video.uploadDate">
     <template v-if="props.video.src">
       <media-player
         v-if="isMounted"
