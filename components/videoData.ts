@@ -29,7 +29,7 @@ export const videos = ref([
             { startTime: 12, endTime: 14, text: 'dünya' },
             { startTime: 14, endTime: 16, text: 'kola' },
             { startTime: 16, endTime: 18, text: 'dünya' },
-            { startTime: 18, endTime: 22, text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
+            { startTime: 18, endTime: 22, text: 'aa' },
           ],
         },
         default: true,

@@ -31,7 +31,7 @@ function updateCurrentLine(video) {
 
 // Watch for changes in props._id and update subtitles accordingly
 watch(() => props._id, () => {
-  const video = videos.value.find(v => v.id === props._id);
+  const video = videos.value.find(v => v.id == props._id);
   if (video) {
     updateCurrentLine(video);
   }
@@ -40,7 +40,7 @@ watch(() => props._id, () => {
 // Update currentLine initially on component mount
 onMounted(() => {
   setInterval(() => {
-    const video = videos.value.find(v => v.id === props._id);
+    const video = videos.value.find(v => v.id == props._id);
     if (video) {
       updateCurrentLine(video);
     }

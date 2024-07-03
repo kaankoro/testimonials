@@ -1,7 +1,3 @@
-.video-container {
-    position: relative;
-  }
-  
   .layer {
     position: absolute;
     z-index: 99999;
@@ -61,8 +57,10 @@
     width: 100%; /* Ensure the transcript fills the width of the container */
     max-width: 100%; /* Ensure the transcript doesn't overflow */
     margin: 0 auto;
-    background-color: rgb(223, 219, 219);
-    border: 1px solid #656363;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 75px;
+    overflow: auto;
   }
   
   .transcript-item {
@@ -77,6 +75,7 @@
     transform: translate(-50%, -50%);
     background-color: black;
     color: white;
+    line-break: anywhere;
   }
   .info-container {
     position: absolute;
@@ -89,22 +88,20 @@
     background: linear-gradient(0deg, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0) 100%);
     color: white;
     padding: 10px;
-    border-radius: 5px;
   }
   
   .name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   
   .description {
-    margin-top: 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: #bbb2b2;
   }
   
   .stars {
-    margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   
   .star {
@@ -123,7 +120,7 @@
     position: absolute;
     right: 5%;
     bottom: 5%;
-    z-index: 1111;
+    z-index: 100000;
   }
   
   .button-frame {
@@ -137,4 +134,23 @@
       height: 2.5rem;
       transition: background-color .3s;
       display: flex;
+  }
+  .video-container {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .margin-4 {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  body {
+    font-family: "DM Sans";
+  }
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
   }
