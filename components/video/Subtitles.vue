@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref, watch, onMounted } from 'vue';
-import { videos } from '../videoData';
+import { videos } from '../videoDataJson';
 
 const props = defineProps({
   _id: Number,

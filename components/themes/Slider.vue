@@ -19,7 +19,7 @@
     <div class="slider-container overflow-hidden">
       <div class="slider flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(${slidePosition}px)` }">
         <div v-for="video in displayedVideos" :key="video.id" class="video-wrapper flex-shrink-0" :style="{ width: videoWidth + 'px' }">
-          <VideoPlayer
+          <ContentProp
             :video="video"
             class="h-full"
             :style="{ opacity: video.visible ? 1 : 0.5, transition: 'opacity 0.5s ease' }"
@@ -32,7 +32,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
-import { videos } from '../videoData';
+import { videos } from '../videoDataJson';
+import ContentProp from '../ContentProp.vue';
 
 const videoCount = ref(3); // Number of videos to display initially
 const slidePosition = ref(0); // Initial slide position

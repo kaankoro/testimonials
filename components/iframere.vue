@@ -8,6 +8,7 @@
     license="GPLv3"
     src="https://profound-florentine-1fdd7c.netlify.app/"
     class="iframe"
+    scrolling="yes"
   />
 </template>
 
@@ -15,6 +16,6 @@
   .iframe {
     width: 100%;
     height: 100vh;
-    overflow: visible;
+    overflow: visible !important;
   }
 </style>
